@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+header {
+    width: 1000px;
+    height: 100px;
+    margin: 40px auto;    
+    background-color: palevioletred;
+}
+
+header h2 {
+    margin: auto;
+    padding: auto;
+    line-height: 100px;   
+    color: white;
+    letter-spacing: 2px;
+}
+
+.container {
+    width: 800px;
+    min-height: 300px;
+    margin: 40px auto; 
+    background-color: seashell;
+    border: 3px solid palevioletred;
+    border-radius: 5px;
+}
+.menu {
+    background-color: sandybrown;
+    min-height: 80px;
+}
+
+.inputs {
+    line-height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.selection {
+    margin-right: 20px; 
+}
+
+span {
+    margin: auto 10px;
+}
