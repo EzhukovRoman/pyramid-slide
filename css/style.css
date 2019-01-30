@@ -48,3 +48,12 @@ header h2 {
 span {
     margin: auto 10px;
 }
+
+#pyramid {
+    font-family: monospace;
+    font-size: 1.2em;
+    margin: 12px;
+    color: purple;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
