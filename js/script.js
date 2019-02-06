@@ -1,23 +1,23 @@
-document.addEventListener("DOMContentLoaded", ()=>{
-    let slider = document.getElementById("rangeBar");
-    let output = document.getElementById("height");
-    output.innerHTML = slider.value; 
-    drawPyramid(slider.value, tackeSymbol());
+$(window).on('load', ()=>{
+    let slider = $("#rangeBar");
+    let output = $("#height").html(slider.val());
     
-    slider.addEventListener("input", function(){    
-        output.innerHTML = this.value;
+    drawPyramid(slider.val(), tackeSymbol());
+    
+    slider.on("input", () =>{    
+        output.html(slider.val());
         clear();
-        drawPyramid(slider.value, tackeSymbol());
+        drawPyramid(slider.val(), tackeSymbol());
     });
     
-    document.querySelector("#symbol").addEventListener("input", () => {
+    $("#symbol").on("input", () => {
         clear();
-        drawPyramid(slider.value, tackeSymbol());
+        drawPyramid(slider.val(), tackeSymbol());
     });
 });
 
 function tackeSymbol(){
-    let symbolType = document.querySelector("#symbol").value;
+    let symbolType = $("#symbol").val();
     let symbol = '';
     switch (symbolType) {
         case '#':
@@ -39,20 +39,19 @@ function tackeSymbol(){
 }
 
 function drawPyramid(height, symbol){
-    var pyramid =  document.querySelector("#pyramid");    
+    var pyramid =  $("#pyramid");    
     for(var p = 1; p <= height; p++){
-        var row = document.createElement("div");
-        row.classList.add("row");       
+        var row = $('<div class="row">');              
         for(var j = 1; j <= (height - p); j++){            
-            row.innerHTML += "&nbsp";                    
+            row.append("&nbsp;");                    
         } 
         for(var i = 0; i <= p; i++){
-            row.innerHTML += symbol;  
+            row.append(symbol);  
         }            
-        pyramid.appendChild(row);
+        pyramid.append(row);
     } 
 } 
 
 function clear(){
-    document.querySelector("#pyramid").innerHTML = ""; 
+    $("#pyramid").html(" "); 
 }
